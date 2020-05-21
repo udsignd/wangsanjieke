@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://4liang.cn/app/yanshi/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>08VIP</title>
+<link rel="stylesheet" href="./css.min.css">
+<script src="./jquery.js"></script>
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{max-width:900px;margin:0 auto}
+.weixin-tip {display: none; position: fixed; left:0; top:0; bottom:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80);  height: 100%; width: 100%; z-index: 100;}
+.weixin-tip p{text-align: center; margin-top: 20%; padding:0 5%;}
+.weixin-tip img{width:100%;}
+</style>
+</head>
+<body>
+<div class="h5ui-msg h5ui-msg_error">
+    <div class="h5ui-msg_content">
+		<div class="tubiao">
+          <img src="Logo.png" >
+          </div>
+		<div class="tab-content">
+			<p>更新于：2019-08-31 17:30:28</p>
+		</div>
+		<div class="erweima"><img src="./qrcode.png"></div>
+      <!-- <a href="https://m.alivip8.com/" class="h5ui-btn h5ui-btn_primary">安卓端下载安装</a> -->
+		
+		<div id="downloadDiv"  style="display: none;">
+					<a href="./app.mobileconfig" class="h5ui-btn h5ui-btn_primary">苹果端下载安装</a>
+				</div>
+		<center><div class="h5ui-tab"><ul class="tab-item"><li class="active"><a>苹果端安装步骤</a></li></ul></div></center>
+		<div class="buzhou">
+		<p>第一步：我们点击"安装"，弹出配置下载文件时，点击"允许"。</p>
+		<img src="./bz1.png">
+		<p>第二步：打开设置→通用→描述文件，即可在"已下载的描述文件"中看到，点击。</p>
+		<img src="./bz2.png">
+		<p>第三步：找到右上角的"安装"，此时有可能需要输入解锁密码，再点击"安装"，即可完成。</p>
+		<img src="./bz3.png">
+		<p>此时我们返回首页，即可看到新安装的APP。</p>
+		</div>
+		<div class="tab-content"><br>
+			<p>本站是应用内测平台，请自行甄别应用风险</p>
+		</div>
+    </div>
+</div>
+	<div class="weixin-tip">
+		<p>
+			<img src="./weixin.png" alt="微信打开">
+		</p>
+	</div>
+	<script type="text/javascript">
+        	$(function() {
+				
+				
+				
+				var is_mobi = navigator.userAgent.toLowerCase().match(
+					/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+				if (is_mobi) {
+					// console.log("手机端");
+					$("#downloadDiv").show();
+
+
+				} 
+				//获取window的Height
+				var winHeight = $(window).height();
+
+				function is_weixin() {
+					//浏览器的信息
+					var ua = navigator.userAgent.toLowerCase();
+					if (ua.match(/MicroMessenger/i) == "micromessenger") {
+						return true;
+					} else if (ua.match(/QQ/i) == "qq") {
+						return true;
+					} else {
+						return false;
+					}
+				}
+				var isWeixin = is_weixin();
+
+				if (isWeixin) {
+					 
+					$(".weixin-tip").css("height", winHeight);
+					// $(".weixin-tip").toggle();
+					  $(".weixin-tip").show();
+					  // $("#downloadDiv").show();
+				}
+
+			});
+	</script>
+
+</body></html>
